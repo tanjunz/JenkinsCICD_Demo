@@ -91,7 +91,9 @@ pipeline {
 				traceLevel: 'None',
 				entryPointPaths: 'Main.xaml'
 			    )
-	            }
+		    }
+		
+		}
 	    }
 	
 
