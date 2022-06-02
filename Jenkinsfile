@@ -9,7 +9,8 @@ pipeline {
 	        UIPATH_ORCH_URL = "https://cloud.uipath.com/"
 	        UIPATH_ORCH_LOGICAL_NAME = "cycorp"
 	        UIPATH_ORCH_TENANT_NAME = "DefaultTenant"
-	        UIPATH_ORCH_FOLDER_NAME = "ClassicFolder1"
+		UIPATH_ORCH_UAT_TENANT_NAME = "MigrateOC"
+	        UIPATH_ORCH_FOLDER_NAME = "dev"
 	    }
 	
 
@@ -59,11 +60,11 @@ pipeline {
                 UiPathDeploy (
                 packagePath: "Output\\${env.BUILD_NUMBER}",
                 orchestratorAddress: "${UIPATH_ORCH_URL}",
-                orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
+                orchestratorTenant: "${UIPATH_ORCH_UAT_TENANT_NAME}",
                 folderName: "${UIPATH_ORCH_FOLDER_NAME}",
-                environments: 'DEV',
+                environments: 'dev',
                 //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-                credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
+                credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'UAT_APIKey'), 
 				traceLevel: 'None',
 				entryPointPaths: 'Main.xaml'
 	
