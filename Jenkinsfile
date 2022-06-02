@@ -90,7 +90,7 @@ pipeline {
 				credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
 				traceLevel: 'None',
 				entryPointPaths: 'Main.xaml'
-			    }
+			    )
 	            }
 	    }
 	
