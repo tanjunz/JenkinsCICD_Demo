@@ -11,6 +11,7 @@ pipeline {
 	        UIPATH_ORCH_TENANT_NAME = "DefaultTenant"
 		UIPATH_ORCH_UAT_TENANT_NAME = "MigrateOC"
 	        UIPATH_ORCH_FOLDER_NAME = "dev"
+		UIPATH_PROD_FOLDER_NAME = "Modern1"
 	    }
 	
 
@@ -84,7 +85,7 @@ pipeline {
 				packagePath: "Output\\${env.BUILD_NUMBER}",
 				orchestratorAddress: "${UIPATH_ORCH_URL}",
 				orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
-				//folderName: "${UIPATH_PROD_FOLDER_NAME}",
+				folderName: "${UIPATH_PROD_FOLDER_NAME}",
 				//environments: 'DEV',
 				//credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
 				credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
