@@ -62,8 +62,8 @@ pipeline {
                 packagePath: "Output\\${env.BUILD_NUMBER}",
                 orchestratorAddress: "${UIPATH_ORCH_URL}",
                 orchestratorTenant: "${UIPATH_ORCH_UAT_TENANT_NAME}",
-                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
-                environments: 'dev',
+                folderName: "Modern1",
+                //environments: 'dev',
                 //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
                 credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'UAT_APIKey'), 
 				traceLevel: 'None',
