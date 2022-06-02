@@ -81,6 +81,7 @@ pipeline {
 	        stage('Deploy to Production') {
 	            steps {
 	                echo 'Deploy to Production'
+			    /*
 			    UiPathDeploy (
 				packagePath: "Output\\${env.BUILD_NUMBER}",
 				orchestratorAddress: "${UIPATH_ORCH_URL}",
@@ -92,6 +93,7 @@ pipeline {
 				traceLevel: 'None',
 				entryPointPaths: 'Main.xaml'
 			    )
+			    */
 		    }
 		
 		}
